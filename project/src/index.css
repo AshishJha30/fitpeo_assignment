@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-blue: #3b56d8;
+  --light-blue: #e4eaff;
+  --teal: #34d1bf;
+  --red: #ff6263;
+  --orange: #ff9f45;
+  --gray-light: #f7f8fb;
+  --gray-medium: #e5e7eb;
+  --gray-dark: #9ca3af;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--gray-light);
+  color: #374151;
+}
+
+.sidebar-link {
+  @apply flex items-center gap-3 px-4 py-3 rounded-lg text-gray-500 transition-colors;
+}
+
+.sidebar-link:hover {
+  @apply text-gray-800 bg-gray-100;
+}
+
+.sidebar-link.active {
+  @apply text-primary-600 bg-primary-50;
+}
+
+.indicator-dot {
+  @apply w-2 h-2 rounded-full;
+}
+
+.indicator-dot.healthy {
+  @apply bg-teal-500;
+}
+
+.indicator-dot.warning {
+  @apply bg-orange-500;
+}
+
+.indicator-dot.danger {
+  @apply bg-red-500;
+}
+
+.calendar-cell {
+  @apply flex flex-col items-center justify-center p-2 rounded-md;
+}
+
+.calendar-cell.today {
+  @apply bg-primary-50;
+}
+
+.calendar-cell.has-appointments {
+  @apply font-medium;
+}
+
+.calendar-appointment {
+  @apply text-xs font-medium py-1 px-2 rounded-md my-1 text-center;
+}
+
+.calendar-appointment.primary {
+  @apply bg-primary-100 text-primary-700;
+}
+
+.calendar-appointment.secondary {
+  @apply bg-purple-100 text-purple-700;
+}
+
+.activity-bar {
+  @apply inline-block w-3 rounded-t-md mx-[2px];
+}
+
+.activity-bar.primary {
+  @apply bg-teal-400;
+}
+
+.activity-bar.secondary {
+  @apply bg-indigo-600;
+}
+
+.health-indicator {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.health-status-bar {
+  @apply h-2 rounded-full overflow-hidden;
+  background-color: var(--gray-medium);
+}
+
+.health-status-bar .progress {
+  @apply h-full;
+}
+
+.health-status-bar.lungs .progress {
+  @apply bg-red-500;
+}
+
+.health-status-bar.teeth .progress {
+  @apply bg-teal-400;
+}
+
+.health-status-bar.bone .progress {
+  @apply bg-orange-400;
+}
